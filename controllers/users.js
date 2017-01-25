@@ -4,6 +4,13 @@ var User = require('../models/user.js');
 var authHelpers = require('../helpers/auth.js')
 
 // User Index
+router.get('/', function(req, res) {
+  User.find({})
+    .exec(function(err, users) {
+      if (err) {console.log(err); }
+      res.render('users/index.hbs', { users: users })
+    });
+});
 
 // User Show
 
