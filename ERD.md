@@ -54,7 +54,7 @@ var exampleUser = {
     var tripOne: [{
       tripName: 'Alaska',
       tripImg: '(url)',
-      favorite = true,
+      favorite: true,
       start: 'Los Angeles, CA',
       destination: 'Anchorage, AK',
       travelTime: '6 hours',
@@ -66,7 +66,7 @@ var exampleUser = {
     var tripTwo: [{
       tripName: 'Galapagos',
       tripImg: '(url)',
-      favorite = true,
+      favorite: true,
       start: 'Los Angeles, CA',
       destination: 'Galapagos Islands, Ecuador',
       travelTime: '23 hours',
@@ -78,7 +78,7 @@ var exampleUser = {
     var tripThree: [{
       tripName: 'El Paso',
       tripImg: '(url)',
-      favorite = false,
+      favorite: false,
       start: 'Los Angeles, CA',
       destination: 'El Paso, TX',
       travelTime: '12 hours',

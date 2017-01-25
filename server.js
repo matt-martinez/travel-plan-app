@@ -12,10 +12,10 @@ var sessionsController = require('./controllers/sessions.js');
 
 // APP SETTINGS
 var app = express();
-var port = 4000;
+var port = 3000;
 
-// ADD THE NAME OF YOUR DATABASE
-// mongoose.connect('mongodb://localhost/<YourDatabaseNameHere>');
+// DATABASE
+mongoose.connect('mongodb://localhost/travelapp');
 
 // VIEWS
 app.set('view engine', 'hbs')
@@ -28,7 +28,7 @@ app.use(methodOverride('_method'));
 
 // MIDDLEWARE
 app.use(session({
-  secret: "derpderpderpcats",
+  secret: "superdoges",
   resave: false,
   saveUninitialized: false
 }));
