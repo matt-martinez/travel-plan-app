@@ -9,7 +9,7 @@
 - trip list
 
 2. Trips
-* trip name
+- trip name
 - trip image
 - favorite
 - start
