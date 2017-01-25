@@ -4,10 +4,12 @@ var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
 var UserSchema = new Schema({
+  username: String,
+  firstName: String,
+  lastName: String,
   email: String,
   password_digest: String,
-  created_at: Date,
-  updated_at: Date
+  // tripList: [tripSchema]
 });
 
 UserSchema.pre('save', function(next) {
