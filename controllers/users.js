@@ -7,12 +7,21 @@ var authHelpers = require('../helpers/auth.js')
 router.get('/', function(req, res) {
   User.find({})
     .exec(function(err, users) {
-      if (err) {console.log(err); }
-      res.render('users/index.hbs', { users: users })
+      if (err) { console.log(err); }
+      res.render('users/index.hbs', { users: users });
     });
 });
 
 // User Show
+router.get('/:id', function(req, res) {
+  User.findById(req.params.id)
+    .exec(function(err, user) {
+      if (err) { console.log(err); }
+      console.log(user);
+
+      res.render('users/show.hbs', { user });
+    });
+});
 
 // Signup
 router.get('/signup', function(req, res){
