@@ -42,7 +42,7 @@ router.post('/', authHelpers.createSecure, function(req, res){
 
     console.log(user);
     res.redirect('/users');
-  })
+  });
 });
 
 module.exports = router;
