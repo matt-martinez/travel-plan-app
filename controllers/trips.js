@@ -7,7 +7,15 @@ var User = require('../models/user.js');
 var authHelpers = require('../helpers/auth.js');
 
 // TRIP SHOW
+router.get('/:id', function(req, res) {
+  User.findById(req.params.id)
+    .exec(function(err, trip) {
+      if (err) { console.log(err); }
+      console.log(trip);
 
+      res.render('trips/show', { trip });
+    });
+});
 
 // TRIP NEW
 
