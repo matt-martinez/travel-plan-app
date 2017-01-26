@@ -12,17 +12,6 @@ router.get('/', function(req, res) {
     });
 });
 
-// User Show
-router.get('/:id', function(req, res) {
-  User.findById(req.params.id)
-    .exec(function(err, user) {
-      if (err) { console.log(err); }
-      console.log(user);
-
-      res.render('users/show.hbs', { user });
-    });
-});
-
 // Signup
 router.get('/signup', function(req, res){
   res.render('users/signup.hbs');
@@ -43,6 +32,17 @@ router.post('/', authHelpers.createSecure, function(req, res){
     console.log(user);
     res.redirect('/users');
   });
+});
+
+// User Show
+router.get('/:id', function(req, res) {
+  User.findById(req.params.id)
+    .exec(function(err, user) {
+      if (err) { console.log(err); }
+      console.log(user);
+
+      res.render('users/show.hbs', { user });
+    });
 });
 
 module.exports = router;
