@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 
 var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
+var tripsController = require('./controllers/trips.js');
 
 // APP SETTINGS
 var app = express();
@@ -36,6 +37,7 @@ app.use(session({
 // CONTROLLERS
 app.use('/users', usersController);
 app.use('/sessions', sessionsController);
+app.use('/trips', tripsController);
 
 // SERVER
 app.listen(port, function() {
