@@ -32,6 +32,8 @@ app.use(methodOverride('_method'));
 app.use(session({
   secret: "superdoges",
   resave: false,
+  // to keep user logged in, remember to remove before push to production
+  maxAge: 365 * 24 * 60 * 60 * 1000,
   saveUninitialized: false
 }));
 
