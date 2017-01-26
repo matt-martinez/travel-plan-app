@@ -8,13 +8,13 @@ router.get('/', function(req, res) {
   User.find({})
     .exec(function(err, users) {
       if (err) { console.log(err); }
-      res.render('users/index.hbs', { users: users });
+      res.render('users/index', { users: users });
     });
 });
 
 // Signup
 router.get('/signup', function(req, res){
-  res.render('users/signup.hbs');
+  res.render('users/signup');
 });
 
 router.post('/', authHelpers.createSecure, function(req, res){
@@ -35,13 +35,13 @@ router.post('/', authHelpers.createSecure, function(req, res){
 });
 
 // User Show
-router.get('/:id', function(req, res) {
+router.get('/:id', authHelpers.authorize, function(req, res) {
   User.findById(req.params.id)
     .exec(function(err, user) {
       if (err) { console.log(err); }
       console.log(user);
 
-      res.render('users/show.hbs', { user });
+      res.render('users/show', { user });
     });
 });
 
