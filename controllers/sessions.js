@@ -8,7 +8,7 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login', authHelpers.loginUser, function(req, res){
-  res.redirect('/users');
+  res.redirect('/users/show.hbs');
 });
 
 router.delete('/', function(req, res){
