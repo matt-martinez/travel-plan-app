@@ -9,7 +9,11 @@
       <ul>
         <li><a href="/users/signup">Sign Up</a></li>
         <li><a href="/sessions/login">Login</a></li>
-        <li><a href="/users/show">Show</a></li>
+        <li>
+          <form action="/sessions?_method=DELETE" method="post">
+            <input type="submit" name="" value="Logout">
+          </form>
+        </li>
       </ul>
     </nav>
       <h1>Clever App Title</h1>
