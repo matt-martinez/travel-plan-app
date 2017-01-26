@@ -41,11 +41,9 @@ app.use('/sessions', sessionsController);
 app.use('/trips', tripsController);
 
 // SERVER
-app.listen(process.env.PORT || 3000);
-
-// function() {
-//   console.log("**************************");
-//   console.log('Server Initialized');
-//   console.log('Listening on Port ' + 3000);
-//   console.log("**************************")
-// });
+app.listen(process.env.PORT || port, function() {
+  console.log("**************************");
+  console.log('Server Initialized');
+  console.log('Listening on Port ' + port);
+  console.log("**************************")
+});
