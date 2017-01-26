@@ -16,7 +16,8 @@ var app = express();
 var port = 3000;
 
 // DATABASE
-mongoose.connect('mongodb://localhost/travelapp');
+var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/travelapp';
+mongoose.connect(mongoURI);
 
 // VIEWS
 app.set('view engine', 'hbs')
@@ -40,9 +41,11 @@ app.use('/sessions', sessionsController);
 app.use('/trips', tripsController);
 
 // SERVER
-app.listen(port, function() {
-  console.log("**************************");
-  console.log('Server Initialized');
-  console.log('Listening on Port ' + port);
-  console.log("**************************")
-});
+app.listen(process.env.PORT || 3000);
+
+// function() {
+//   console.log("**************************");
+//   console.log('Server Initialized');
+//   console.log('Listening on Port ' + 3000);
+//   console.log("**************************")
+// });
