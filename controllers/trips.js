@@ -6,14 +6,14 @@ var Trip = require('../models/trip.js');
 var User = require('../models/user.js');
 var authHelpers = require('../helpers/auth.js');
 
-// TRIP INDEX
-router.get('/trips', function(req, res) {
-  User.find({})
-    .exec(function(err, trips) {
-      if (err) { console.log(err); }
-      res.render('users/show', { trips: trips});
-    });
-});
+// // TRIP INDEX
+// router.get('/trips', function(req, res) {
+//   User.find({})
+//     .exec(function(err, trips) {
+//       if (err) { console.log(err); }
+//       res.render('users/show', { trips: trips});
+//     });
+// });
 
 // TRIP NEW
 router.get('/new', function(req, res) {
@@ -78,10 +78,28 @@ router.get('/edit/:id', function(req, res) {
     });
 });
 
-
-// .findOne({"_id":req.params.id})
-
 // TRIP UPDATE
+router.put('/:id', function(req, res) {
+  User.findById(req.session.currentUser._id)
+    .exec(function(err, user) {
+      if (err) { console.log(err); }
+      console.log(user)
+      var trip = user.trips.id(req.params.id);
+        trip.tripName = req.body.tripName,
+        trip.img = req.body.img,
+        trip.favorite = req.body.favorite,
+        trip.start = req.body.start,
+        trip.destination = req.body.destination,
+        trip.travelTime = req.body.travelTime,
+        trip.methodOfTravel = req.body.methodOfTravel,
+        trip.landmarks = req.body.landmarks,
+        trip.routes = req.body.routes,
+        trip.stops = req.body.stops,
+        user.save()
+
+        res.redirect('/trips/' + user.trips.id);
+    });
+})
 
 // TRIP DELETE
 
