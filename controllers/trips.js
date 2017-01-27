@@ -6,15 +6,6 @@ var Trip = require('../models/trip.js');
 var User = require('../models/user.js');
 var authHelpers = require('../helpers/auth.js');
 
-// // TRIP INDEX
-// router.get('/trips', function(req, res) {
-//   User.find({})
-//     .exec(function(err, trips) {
-//       if (err) { console.log(err); }
-//       res.render('users/show', { trips: trips});
-//     });
-// });
-
 // TRIP NEW
 router.get('/new', function(req, res) {
   res.render('trips/new');
@@ -22,22 +13,16 @@ router.get('/new', function(req, res) {
 
 // TRIP SHOW
 router.get('/:id', function(req, res) {
-  console.log("THIS IS REQ.QUERY: ", req.query)
-  console.log("THIS IS REQ.QUERY.INDEX: ", req.query.index)
   User.findById(req.session.currentUser._id)
     .exec(function(err, user) {
       if (err) { console.log(err); }
-      console.log(user);
-      //var trip = user.trips[req.query.index]
       var trip = user.trips.id(req.params.id)
-      console.log(trip)
       res.render('trips/show', { trip, user });
     });
 });
 
 // TRIP CREATE
 router.post('/', function(req, res) {
-  console.log("Trip Post Route");
   console.log("IS IT FAVORITE?", req.params.favorite);
   var trip = new Trip({
     tripName: req.body.tripName,
@@ -55,13 +40,10 @@ router.post('/', function(req, res) {
   User.findById(req.session.currentUser._id)
     .exec(function(err, user) {
       if (err) { console.log(err); }
-      console.log(user);
       user.trips.push(trip);
 
   user.save(function(err, trip) {
     if (err) { console.log(err); }
-    console.log(trip);
-    console.log(req.session.currentUser);
     res.redirect('users/' + req.session.currentUser._id);
     });
   });
@@ -72,24 +54,16 @@ router.get('/edit/:id', function(req, res) {
   User.findById(req.session.currentUser._id)
     .exec(function(err, user) {
       if (err) { console.log(err); }
-      console.log(user)
       var trip = user.trips.id(req.params.id)
-      console.log(trip)
-      console.log(req.params.id)
-      // var trip = User.findOne({"_id": req.params.id})
-      // console.log(trip)
       res.render('trips/edit', { trip, user });
     });
 });
 
 // TRIP UPDATE
 router.put('/:id', function(req, res) {
-  console.log("UPDATE ROUTE ACCESSED");
   User.findById(req.session.currentUser._id)
     .exec(function(err, user) {
       if (err) { console.log(err); }
-      //console.log(user)
-
       var trip = user.trips.id(req.params.id);
         trip.tripName = req.body.tripName,
         trip.img = req.body.img,
@@ -104,36 +78,10 @@ router.put('/:id', function(req, res) {
 
         user.save(
           function(err, user){
-            //console.log("USER IS SAVED: ", user);
             res.redirect('/trips/' + req.params.id);
-          }
-        )
-
-
+          });
     });
-})
-
-// router.put('/:id', function(req, res) {
-//   User.findById(req.session.currentUser._id)
-//     .exec(function(err, user) {
-//       if (err) { console.log(err); }
-//       console.log(user)
-//       var trip = user.trips.id(req.params.id);
-//         trip.tripName = req.body.tripName,
-//         trip.img = req.body.img,
-//         trip.favorite = req.body.favorite,
-//         trip.start = req.body.start,
-//         trip.destination = req.body.destination,
-//         trip.travelTime = req.body.travelTime,
-//         trip.methodOfTravel = req.body.methodOfTravel,
-//         trip.landmarks = req.body.landmarks,
-//         trip.routes = req.body.routes,
-//         trip.stops = req.body.stops,
-//         user.save()
-//
-//         res.redirect('/trips/' + req.params.id);
-//     });
-// })
+});
 
 // TRIP DELETE
 router.delete('/:id', function(req, res) {
