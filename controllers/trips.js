@@ -28,7 +28,7 @@ router.get('/:id', function(req, res) {
       console.log(user);
       var trip = user.trips[req.query.index]
       console.log(trip)
-      res.render('trips/show', { trip });
+      res.render('trips/show', { trip, user });
     });
 });
 

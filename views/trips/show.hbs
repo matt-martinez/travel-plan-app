@@ -1,7 +1,15 @@
-{{#each trip}}
-<h1>{{tripName}}</h1>
+<h1>{{trip.tripName}}</h1>
+<ul>
+  <li>Trip Start: {{trip.start}}</li>
+  <li>Destination: {{trip.destination}}</li>
+  <li>Travel Duration: {{trip.travelTime}}</li>
+  <li>Method of Travel: {{trip.methodOfTravel}}</li>
+  <li>Notable Landmarks: {{trip.landmarks}}</li>
+  <li>Routes: {{trip.routes}}</li>
+  <li>Stops: {{trip.stops}}</li>
+  <li>Favorite Trip? {{trip.favorite}}</li>
+  <li>Trip Picture: {{trip.img}}</li>
+</ul>
 
 
-{{/each}}
-
-<a href="/users">Return to Account Page</a>
+<a href="/users/{{user._id}}">Return to Account Page</a>
