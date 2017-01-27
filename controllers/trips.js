@@ -63,8 +63,25 @@ router.post('/', function(req, res) {
   });
 });
 
+// TRIP EDIT
+router.get('/edit/:id', function(req, res) {
+  User.findById(req.session.currentUser._id)
+    .exec(function(err, user) {
+      if (err) { console.log(err); }
+      console.log(user)
+      var trip = user.trips.id(req.params.id)
+      console.log(trip)
+      console.log(req.params.id)
+      // var trip = User.findOne({"_id": req.params.id})
+      // console.log(trip)
+      res.render('trips/edit', { trip, user });
+    });
+});
 
-// TRIP EDIT/UPDATE
+
+// .findOne({"_id":req.params.id})
+
+// TRIP UPDATE
 
 // TRIP DELETE
 
