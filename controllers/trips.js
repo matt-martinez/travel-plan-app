@@ -7,7 +7,7 @@ var User = require('../models/user.js');
 var authHelpers = require('../helpers/auth.js');
 
 // TRIP INDEX
-router.get('/', function(req, res) {
+router.get('/trips', function(req, res) {
   User.find({})
     .exec(function(err, trips) {
       if (err) { console.log(err); }
@@ -50,11 +50,17 @@ router.post('/', function(req, res) {
   trip.save(function(err, trip) {
     if (err) { console.log(err); }
     console.log(trip);
-    console.log(req.sessions.currentUser)
-    res.redirect('users/' + req.session.currentUser._id);
+    console.log(req.session.currentUser);
+    res.redirect('trips/show');
+    // res.redirect('users/' + req.session.currentUser._id);
   });
 });
 
+// User.findById(req.params.id)
+//   .exec(function(err, user) {
+//     if (err) { console.log(err); }
+//     console.log(user);
+    // user.trips.push(trip);
 
 // TRIP EDIT/UPDATE
 

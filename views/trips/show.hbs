@@ -1,6 +1,11 @@
 <h1>Trip Show Page</h1>
 
+<a href="/trips/new">Create New Trip!</a>
 
-
+{{#each trip}}
+<ul>
+  <li>{{tripName}}</li>
+</ul>
+{{/each}}
 
 <a href="/users">Return to Account Page</a>
