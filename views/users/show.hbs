@@ -2,9 +2,10 @@
 
 <a href="/trips/new">Create New Trip!</a>
 <h3>All Trips</h3>
-{{#each trip}}
+
+{{#each user.trips}}
 <ul>
-  <li>{{tripName}}</li>
+  <li><a href="/trips/{{_id}}?index={{@index}}">{{tripName}}</a></li>
 </ul>
 {{/each}}
 

@@ -22,11 +22,12 @@ router.get('/new', function(req, res) {
 
 // TRIP SHOW
 router.get('/:id', function(req, res) {
-  User.findById(req.params.id)
-    .exec(function(err, trip) {
+  User.findById(req.session.currentUser._id)
+    .exec(function(err, user) {
       if (err) { console.log(err); }
-      console.log(trip);
-
+      console.log(user);
+      var trip = user.trips[req.query.index]
+      console.log(trip)
       res.render('trips/show', { trip });
     });
 });
@@ -47,20 +48,21 @@ router.post('/', function(req, res) {
     stops: req.body.stops
   });
 
-  trip.save(function(err, trip) {
+  User.findById(req.session.currentUser._id)
+    .exec(function(err, user) {
+      if (err) { console.log(err); }
+      console.log(user);
+      user.trips.push(trip);
+
+  user.save(function(err, trip) {
     if (err) { console.log(err); }
     console.log(trip);
     console.log(req.session.currentUser);
-    res.redirect('trips/show');
-    // res.redirect('users/' + req.session.currentUser._id);
+    res.redirect('users/' + req.session.currentUser._id);
+    });
   });
 });
 
-// User.findById(req.params.id)
-//   .exec(function(err, user) {
-//     if (err) { console.log(err); }
-//     console.log(user);
-    // user.trips.push(trip);
 
 // TRIP EDIT/UPDATE
 
