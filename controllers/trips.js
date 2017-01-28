@@ -88,11 +88,8 @@ router.delete('/:id', function(req, res) {
   User.findById(req.session.currentUser._id)
     .exec(function(err, user) {
       if (err) { console.log(err); }
-      console.log(user)
-      var trip = user.trips.id(req.params.id)
-      console.log(trip)
-      console.log("ABOVE ITEM TO BE DELETED")
-      user.trips.splice(trip);
+      user.trips.id(req.params.id).remove();
+      user.save();
       res.redirect('/users/' + req.session.currentUser._id);
     });
 });
