@@ -85,10 +85,15 @@ router.put('/:id', function(req, res) {
 
 // TRIP DELETE
 router.delete('/:id', function(req, res) {
-  User.findById(user.trips.id(req.params.id))
+  User.findById(req.session.currentUser._id)
     .exec(function(err, user) {
       if (err) { console.log(err); }
       console.log(user)
+      var trip = user.trips.id(req.params.id)
+      console.log(trip)
+      console.log("ABOVE ITEM TO BE DELETED")
+      user.trips.splice(trip);
+      res.redirect('/users/' + req.session.currentUser._id);
     });
 });
 
