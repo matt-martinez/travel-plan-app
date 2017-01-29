@@ -10,13 +10,13 @@
       crossorigin="anonymous"></script>
     <script type="text/javascript" src="/script.js"></script>
   </head>
-  
+
   <body>
     <nav>
       <ul>
-        <li><a href="/users/signup">Sign Up</a></li>
-        <li><a href="/sessions/login">Login</a></li>
-        <li>
+        <li><a class="navLink" href="/users/signup">Sign Up</a></li>
+        <li><a class="navLink" href="/sessions/login">Login</a></li>
+        <li style="float:right">
           <form action="/sessions?_method=DELETE" method="post">
             <input type="submit" name="" value="Logout">
           </form>

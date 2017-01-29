@@ -10,3 +10,37 @@ h1, h2, h3 {
 #siteTitle {
   text-align: center;
 }
+
+li {
+  list-style: none;
+}
+
+/*Horizontal Nav Bar*/
+nav ul {
+  background-color: darkblue;
+  margin: 0;
+  padding: 0;
+  height: 32px;
+  width: auto;
+}
+
+nav li {
+  display: inline-block;;
+  align-items: center;
+  border-right: 1px solid white;
+  padding: 5px;
+}
+
+nav li:hover {
+  background-color: grey;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  padding: 0px 35px;
+}
