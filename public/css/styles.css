@@ -101,3 +101,11 @@ input[type=text] {
 #allTrips, #favoriteTrips {
   width: 350px;
 }
+
+/*Trip Show Page*/
+.userImg {
+  height: 500px;
+  width: 500px;
+  float: right;
+  margin-right: 25px;
+}
