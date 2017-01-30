@@ -1,7 +1,10 @@
 /*Main Layout*/
+.indexBG {
+  background-image: url(http://i.imgur.com/w1AusXn.jpg);
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
-  background-image: url(http://i.imgur.com/w1AusXn.jpg);
   color: #10204A;
   font-weight: bold;
 }
@@ -72,12 +75,17 @@ li:last-child {
   align-items: stretch;
 }
 
-/*Sign-Up and Login Styling*/
-.signUp, .login {
+/*Cross Page Styling*/
+.signUp, .login, .userShow {
   font-size: 1.5em;
 }
 
 input[type=text] {
   height: 15px;
   width: 150px
+}
+
+/*User Show Page*/
+.userBG {
+  background-image: url(http://i.imgur.com/p4EWa0S.jpg);
 }

@@ -1,16 +1,21 @@
-<h2>{{user.username}}'s Trips</h1>
+<html class="userBG">
+  <div class="userShow">
+    <div class=".container">
+      <h2>{{user.username}}'s Trips</h1>
 
-<a href="/trips/new">Create New Trip!</a>
-<h3>All Trips</h3>
+      <a href="/trips/new">Create New Trip!</a>
+      <h3>All Trips</h3>
 
-{{#each user.trips}}
-<ul>
-  <li><a href="/trips/{{_id}}">{{tripName}}</a></li>
-</ul>
-{{/each}}
+      {{#each user.trips}}
+      <ul>
+        <li><a href="/trips/{{_id}}">{{tripName}}</a></li>
+      </ul>
+      {{/each}}
 
-<br>
+      <br>
 
-<h3>Favorite Trips</h3>
-
-<a href="/users">Return to Home Page</a>
+      <h3>Favorite Trips</h3>
+    </div>
+  </div>
+  <a href="/users">Return to Home Page</a>
+</html>
