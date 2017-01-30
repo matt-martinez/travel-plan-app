@@ -71,3 +71,13 @@ li:last-child {
   justify-content: flex-start;
   align-items: stretch;
 }
+
+/*Sign-Up and Login Styling*/
+.signUp, .login {
+  font-size: 1.5em;
+}
+
+input[type=text] {
+  height: 15px;
+  width: 150px
+}
