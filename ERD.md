@@ -1,6 +1,6 @@
 ## ERDs
 ### Entities
-1. User
+#### User
 - username
 - first name
 - last name
@@ -8,7 +8,7 @@
 - password
 - trip list
 
-2. Trips
+#### Trips
 - trip name
 - trip image
 - favorite
