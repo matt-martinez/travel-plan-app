@@ -102,6 +102,9 @@ input[type=text] {
   width: 350px;
 }
 
+/*Citation: https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/*/
+/*Learned from code in link above to create slideshow*/
+/*The citation extends to the two #userImages selectors below*/
 #userImages {
   margin-right: 80px auto;
   position: relative;
