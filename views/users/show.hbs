@@ -22,8 +22,12 @@
             {{/each}}
           </ul>
       </div>
+      {{#each user.trips}}
       <div id="userImages">
-          <h3>Placeholder</h3>
+        <div>
+            <img class="userImg" src="{{img}}" alt="">
+        </div>
+      {{/each}}
       </div>
     </div>
   </div>
