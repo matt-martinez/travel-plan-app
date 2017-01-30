@@ -89,3 +89,15 @@ input[type=text] {
 .userBG {
   background-image: url(http://i.imgur.com/p4EWa0S.jpg);
 }
+
+.userPageTrips {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+#allTrips, #favoriteTrips {
+  width: 350px;
+}
