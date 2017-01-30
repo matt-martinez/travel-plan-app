@@ -1,7 +1,8 @@
 /*Main Layout*/
 body {
-  background-color: lightblue;
   font-family: 'Open Sans', sans-serif;
+  background-image: url(http://i.imgur.com/uNxsfHG.jpg);
+  color: #10204A;
 }
 
 h1, h2, h3 {
@@ -11,11 +12,15 @@ h1, h2, h3 {
 #siteTitle {
   text-align: center;
   font-size: 3.5em;
-  color: darkblue;
+  text-decoration: underline;
 }
 
 li {
   list-style: none;
+}
+
+a {
+  color: #10204A;
 }
 
 /*Horizontal Nav Bar*/
@@ -71,10 +76,8 @@ li:last-child {
 }
 
 #featuredTrips, #userTrips {
-  border: 1px solid black;
   text-align: center;
   width: 300px;
-  background-color: lightgrey;
 }
 
 .container {
