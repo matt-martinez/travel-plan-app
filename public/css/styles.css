@@ -76,7 +76,7 @@ li:last-child {
 }
 
 /*Cross Page Styling*/
-.signUp, .login, .userShow {
+.signUp, .login, .userShow, .tripShow, .newTrip, .editTrip {
   font-size: 1.5em;
 }
 
