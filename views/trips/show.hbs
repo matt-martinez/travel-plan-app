@@ -1,20 +1,22 @@
-<h1>{{trip.tripName}}</h1>
-<ul>
-  <li>Trip Picture: {{trip.img}}</li>
-  <li>Favorite Trip? {{trip.favorite}}</li>
-  <li>Trip Start: {{trip.start}}</li>
-  <li>Destination: {{trip.destination}}</li>
-  <li>Travel Duration: {{trip.travelTime}}</li>
-  <li>Method of Travel: {{trip.methodOfTravel}}</li>
-  <li>Notable Landmarks: {{trip.landmarks}}</li>
-  <li>Routes: {{trip.routes}}</li>
-  <li>Stops: {{trip.stops}}</li>
-</ul>
+<html class="userBG">
+  <h1>{{trip.tripName}}</h1>
+  <ul>
+    <li>Trip Picture: {{trip.img}}</li>
+    <li>Favorite Trip? {{trip.favorite}}</li>
+    <li>Trip Start: {{trip.start}}</li>
+    <li>Destination: {{trip.destination}}</li>
+    <li>Travel Duration: {{trip.travelTime}}</li>
+    <li>Method of Travel: {{trip.methodOfTravel}}</li>
+    <li>Notable Landmarks: {{trip.landmarks}}</li>
+    <li>Routes: {{trip.routes}}</li>
+    <li>Stops: {{trip.stops}}</li>
+  </ul>
 
-<a href="/trips/edit/{{trip._id}}">Edit Trip</a>
-<br>
-<form action="/trips/{{trip._id}}?_method=DELETE" method="post">
-  <input type="submit" value="Delete This Trip">
-</form>
-<br>
-<a href="/users/{{user._id}}">Return to Account Page</a>
+  <a href="/trips/edit/{{trip._id}}">Edit Trip</a>
+  <br>
+  <form action="/trips/{{trip._id}}?_method=DELETE" method="post">
+    <input type="submit" value="Delete This Trip">
+  </form>
+  <br>
+  <a href="/users/{{user._id}}">Return to Account Page</a>
+</html>

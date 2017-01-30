@@ -1,45 +1,47 @@
-<h1>Edit {{trip.tripName}}</h1>
+<html class="userBG">
+  <h1>Edit {{trip.tripName}}</h1>
 
-<form action="/trips/{{trip._id}}?_method=PUT" method="post">
-  <div class="">
-    <label for="tripName">Trip Name: </label>
-    <input type="text" name="tripName" value="{{trip.tripName}}">
-  </div>
-  <div class="">
-    <label for="img">Trip Picture: </label>
-    <input type="text" name="img" value="{{trip.img}}">
-  </div>
-  <div class="">
-    <label for="favorite">Favorite Trip? </label>
-    <input type="checkbox" name="favorite" value="{{trip.favorite}}">
-  </div>
-  <div class="">
-    <label for="start">Trip Start: </label>
-    <input type="text" name="start" value="{{trip.start}}">
-  </div>
-  <div class="">
-    <label for="destination">Destination: </label>
-    <input type="text" name="destination" value="{{trip.destination}}">
-  </div>
-  <div class="">
-    <label for="travelTime">Travel Duration: </label>
-    <input type="text" name="travelTime" value="{{trip.travelTime}}">
-  </div>
-  <div class="">
-    <label for="methodOfTravel">Method of Travel: </label>
-    <input type="text" name="methodOfTravel" value="{{trip.methodOfTravel}}">
-  </div>
-  <div class="">
-    <label for="landmarks">Notable Landmarks: </label>
-    <input type="text" name="landmarks" value="{{trip.landmarks}}">
-  </div>
-  <div class="">
-    <label for="routes">Routes: </label>
-    <input type="text" name="routes" value="{{trip.routes}}">
-  </div>
-  <div class="">
-    <label for="stops">Stops: </label>
-    <input type="text" name="stops" value="{{trip.stops}}">
-  </div>
-  <input type="submit" name="" value="Submit Changes">
-</form>
+  <form action="/trips/{{trip._id}}?_method=PUT" method="post">
+    <div class="">
+      <label for="tripName">Trip Name: </label>
+      <input type="text" name="tripName" value="{{trip.tripName}}">
+    </div>
+    <div class="">
+      <label for="img">Trip Picture: </label>
+      <input type="text" name="img" value="{{trip.img}}">
+    </div>
+    <div class="">
+      <label for="favorite">Favorite Trip? </label>
+      <input type="checkbox" name="favorite" value="{{trip.favorite}}">
+    </div>
+    <div class="">
+      <label for="start">Trip Start: </label>
+      <input type="text" name="start" value="{{trip.start}}">
+    </div>
+    <div class="">
+      <label for="destination">Destination: </label>
+      <input type="text" name="destination" value="{{trip.destination}}">
+    </div>
+    <div class="">
+      <label for="travelTime">Travel Duration: </label>
+      <input type="text" name="travelTime" value="{{trip.travelTime}}">
+    </div>
+    <div class="">
+      <label for="methodOfTravel">Method of Travel: </label>
+      <input type="text" name="methodOfTravel" value="{{trip.methodOfTravel}}">
+    </div>
+    <div class="">
+      <label for="landmarks">Notable Landmarks: </label>
+      <input type="text" name="landmarks" value="{{trip.landmarks}}">
+    </div>
+    <div class="">
+      <label for="routes">Routes: </label>
+      <input type="text" name="routes" value="{{trip.routes}}">
+    </div>
+    <div class="">
+      <label for="stops">Stops: </label>
+      <input type="text" name="stops" value="{{trip.stops}}">
+    </div>
+    <input type="submit" name="" value="Submit Changes">
+  </form>
+</html>
